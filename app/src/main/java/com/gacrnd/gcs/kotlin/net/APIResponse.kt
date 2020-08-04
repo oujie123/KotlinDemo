@@ -2,14 +2,14 @@ package com.gacrnd.gcs.kotlin.net
 
 import android.content.Context
 import com.gacrnd.gcs.kotlin.LoadingDialog
-import com.gacrnd.gcs.kotlin.entity.LoginResponseWrapper
+import com.gacrnd.gcs.kotlin.entity.LoginRegisterResponseWrapper
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 
 /**
  * @author Jack_Ou  created on 2020/8/3.
  */
-abstract class APIResponse<T>(val context: Context) : Observer<LoginResponseWrapper<T>> {
+abstract class APIResponse<T>(val context: Context) : Observer<LoginRegisterResponseWrapper<T>> {
 
     private var isShow: Boolean = true
 
@@ -29,7 +29,7 @@ abstract class APIResponse<T>(val context: Context) : Observer<LoginResponseWrap
         }
     }
 
-    override fun onNext(t: LoginResponseWrapper<T>) {
+    override fun onNext(t: LoginRegisterResponseWrapper<T>) {
         if (t.data == null) {
             fail("登录失败，errorCode:${t.msg}")
         } else {

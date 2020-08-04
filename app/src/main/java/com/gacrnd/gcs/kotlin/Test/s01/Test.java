@@ -1,4 +1,4 @@
-package com.gacrnd.gcs.kotlin.Test;
+package com.gacrnd.gcs.kotlin.Test.s01;
 
 /**
  * 测试java kotlin互相调用

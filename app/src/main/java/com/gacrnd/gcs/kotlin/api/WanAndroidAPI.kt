@@ -1,7 +1,7 @@
 package com.gacrnd.gcs.kotlin.api
 
-import com.gacrnd.gcs.kotlin.entity.LoginResponse
-import com.gacrnd.gcs.kotlin.entity.LoginResponseWrapper
+import com.gacrnd.gcs.kotlin.entity.LoginRegisterResponse
+import com.gacrnd.gcs.kotlin.entity.LoginRegisterResponseWrapper
 import io.reactivex.Observable
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -19,7 +19,15 @@ interface WanAndroidAPI {
     @FormUrlEncoded
     fun login(@Field("username") username:String,
               @Field("password") password:String)
-    :Observable<LoginResponseWrapper<LoginResponse>>
+    :Observable<LoginRegisterResponseWrapper<LoginRegisterResponse>>
 
-
+    /**
+     * 注册
+     */
+    @POST("/user/register")
+    @FormUrlEncoded
+    fun registerAction(@Field("username") username: String,
+                       @Field("password") password: String,
+                       @Field("repassword") repassword:String)
+    :Observable<LoginRegisterResponseWrapper<LoginRegisterResponse>>
 }

@@ -1,7 +1,5 @@
-package com.gacrnd.gcs.kotlin.Test
+package com.gacrnd.gcs.kotlin.Test.s01
 
-import android.icu.text.IDNA
-import javax.xml.transform.Source
 import kotlin.reflect.KClass
 
 /**
@@ -41,7 +39,7 @@ fun main() {
     })
 
     //第二种使用回调的写法
-    CallbackManager().setCallback(object : JavaCallback{
+    CallbackManager().setCallback(object : JavaCallback {
         override fun show(info: String?) {
             println(info?.length)
         }
@@ -57,14 +55,14 @@ fun main() {
     CallbackManager().setCallback(callback)
 
     //TODO 调用kotlin的callback
-    KtCallbackManager().setCallback(object : KtCallback{
+    KtCallbackManager().setCallback(object : KtCallback {
         override fun show(name: String) {
             println(name)
         }
     })
 
     //第二种 java的可以不加object   kotlin 的必须加object
-    val cb = object : KtCallback{
+    val cb = object : KtCallback {
         override fun show(name: String) {
             println(name)
         }
