@@ -1,12 +1,12 @@
-package com.xiangxue.kotlinproject.modules.collect
+package com.gacrnd.gcs.kotlin.modules.collect
 
 import android.util.Log
+import com.gacrnd.gcs.kotlin.config.Constant
 import com.gacrnd.gcs.kotlin.database.Student
-import com.xiangxue.kotlinproject.config.Flag
-import com.xiangxue.kotlinproject.data_model.local.LocalRoomRequestManager
-import com.xiangxue.kotlinproject.databse.Student
+import com.gacrnd.gcs.kotlin.datamodel.LocalRoomRequestManager
 import com.xiangxue.kotlinproject.modules.collect.inter.CollectModel
 import com.xiangxue.kotlinproject.modules.collect.inter.CollectPresenter
+
 
 // M impl
 class CollectModuleImpl : CollectModel {
@@ -50,7 +50,7 @@ class CollectModuleImpl : CollectModel {
 
     override fun requestQueryAll(listener: CollectPresenter.OnCollectResponseListener) {
         val result = LocalRoomRequestManager.getInstance().queryAllStudent()
-        Log.d(Flag.TAG, "requestQueryAll: result$result")
+        Log.d(Constant.TAG, "requestQueryAll: result$result")
         listener.showResultSuccess(result)
     }
 }

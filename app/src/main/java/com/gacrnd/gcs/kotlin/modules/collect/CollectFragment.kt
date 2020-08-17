@@ -1,4 +1,4 @@
-package com.xiangxue.kotlinproject.modules.collect
+package com.gacrnd.gcs.kotlin.modules.collect
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gacrnd.gcs.kotlin.R
+import com.gacrnd.gcs.kotlin.adapter.CollectAdapter
 import com.gacrnd.gcs.kotlin.config.Constant
 import com.gacrnd.gcs.kotlin.database.Student
 import com.xiangxue.kotlinproject.base.BaseFragment

@@ -1,9 +1,10 @@
-package com.xiangxue.kotlinproject.modules.collect
+package com.gacrnd.gcs.kotlin.modules.collect
 
 import com.gacrnd.gcs.kotlin.database.Student
 import com.xiangxue.kotlinproject.modules.collect.inter.CollectModel
 import com.xiangxue.kotlinproject.modules.collect.inter.CollectPresenter
 import com.xiangxue.kotlinproject.modules.collect.inter.CollectView
+
 
 // P impl
 class CollectPresenterImpl(var view: CollectView?) : CollectPresenter

@@ -1,9 +1,6 @@
 package com.gacrnd.gcs.kotlin.database
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 /**
  * @Author:         Jack Ou
@@ -26,4 +23,7 @@ interface StudentDao {
 
     @Query(value = "SELECT * FROM Student ORDER BY ID DESC")
     fun queryAllStudents() : List<Student>
+
+    @Delete
+    fun deleteStudents(vararg students: Student)
 }

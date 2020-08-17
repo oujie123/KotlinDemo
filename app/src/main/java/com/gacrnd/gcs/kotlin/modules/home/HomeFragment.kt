@@ -9,7 +9,11 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.gacrnd.gcs.kotlin.DetailLinkActivity
 import com.gacrnd.gcs.kotlin.R
+import com.gacrnd.gcs.kotlin.adapter.HomeInfoListAdapter
 import com.gacrnd.gcs.kotlin.config.Constant
+import com.gacrnd.gcs.kotlin.datamodel.request.NetworkResultData
+import com.gacrnd.gcs.kotlin.datamodel.request.RequestAPI
+import com.gacrnd.gcs.kotlin.entity.HomeDataResponse
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.Response
