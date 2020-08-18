@@ -1,5 +1,8 @@
 package com.gacrnd.gcs.kotlin.Test
 
+import android.content.Context
+import android.widget.Toast
+
 /**
  * 高阶演示
  *
@@ -13,8 +16,8 @@ fun main() {
 //        false
 //    }
 
-    loginInteraction("jackou","123456"){
-        if (it){
+    loginInteraction("jackou", "123456") {
+        if (it) {
             println("登录成功")
             return@loginInteraction "好的"
         } else {
@@ -38,10 +41,14 @@ fun show(isLogin: Boolean, loginMethod: (String) -> Boolean) {
 
 ////使用userName，password去登录，然后将结果返回到调用方。调用方回复收到
 fun loginInteraction(userName: String, password: String, loginResult: (Boolean) -> String) {
-    val client = loginResult(login(userName,password))
+    val client = loginResult(login(userName, password))
     println("client response: $client")
 }
 
-fun login(userName: String, password: String) : Boolean{
+fun login(userName: String, password: String): Boolean {
     return false
+}
+
+fun Context.toast(info: String) {
+    Toast.makeText(this,info,Toast.LENGTH_SHORT).show()
 }

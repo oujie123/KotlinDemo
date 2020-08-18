@@ -5,7 +5,8 @@ import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
-// 派生 和 object 尽量选择 object
+// 实现单例：派生 和 object 尽量选择 object
+// 如果需要传参数，则使用companion object来构建单例
 object RequestAPI : IRequest {
 
     // 单例

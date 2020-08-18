@@ -22,5 +22,29 @@ fun main() {
     println("method04 result:${method04(6, 6)}")
     println("method05 result:${method05(6, 6)}")
 
+    var method06 = { num1: Int, num2: Int -> println("$num1 + $num2 = ${num1 + num2}")
+        num1 + num2
+    }
+    println("method06:result:${method06(1,2)}")
 
+    /*=========================高阶===========================================*/
+    loginEngine("jack","123")
 }
+
+//给高阶函数去一个别名
+typealias RequestLogin = (String,String) -> Unit
+
+private fun loginService(userName:String,userPwd:String, requestLogin: RequestLogin) : Unit{
+    requestLogin(userName,userPwd)
+}
+
+fun loginEngine(userName:String,userPwd:String) : Unit{
+    loginService(userName,userPwd){ name,pwd ->
+        if(name == "jack" && pwd == "123"){
+            println("登录成功")
+        } else {
+            println("登录失败")
+        }
+    }
+}
+

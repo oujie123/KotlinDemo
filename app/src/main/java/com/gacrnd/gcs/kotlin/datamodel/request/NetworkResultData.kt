@@ -3,6 +3,7 @@ package com.gacrnd.gcs.kotlin.datamodel.request
 
 import android.os.Handler
 import android.os.Looper
+import android.os.Message
 import android.util.Log
 import com.gacrnd.gcs.kotlin.config.Constant
 import okhttp3.Call
@@ -18,10 +19,20 @@ abstract class NetworkResultData : Callback {
 
         // 在主线程 执行
         Handler(Looper.getMainLooper(), Handler.Callback {
+            //e.message?.let { requestError(it) }
             // 如果message不为null，就执行 .let { requestError(it)  }   it==message本身
             e.message?.myLet { requestError(this)  }
             false // 正常执行下去 false
         }).sendEmptyMessage(0)
+
+        //如果使用object，需要实现handleMessage方法
+//        Handler(Looper.getMainLooper(),object : Handler.Callback{
+//            override fun handleMessage(p0: Message): Boolean {
+//                e.message?.let { requestError(p0) }
+//                return false
+//            }
+//
+//        }).sendEmptyMessage(0)
     }
 
     override fun onResponse(call: Call, response: Response) {

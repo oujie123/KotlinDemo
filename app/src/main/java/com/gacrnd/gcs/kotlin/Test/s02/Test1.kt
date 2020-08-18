@@ -21,18 +21,18 @@ fun `showTest`() {
     println("showTest")
 }
 
-//隐藏函数
-fun `   `(name: String){
-    println(name)
-}
-
-//随意混淆函数名
-fun `4561389789`(name:String){
-    println(name)
-}
-
-fun main(){
-    `showTest`()
-    `   `("JackOu")
-    `4561389789`("JackOu1")
-}
+////隐藏函数
+//fun `   `(name: String){
+//    println(name)
+//}
+//
+////随意混淆函数名
+//fun `4561389789`(name:String){
+//    println(name)
+//}
+//
+//fun main(){
+//    `showTest`()
+//    `   `("JackOu")
+//    `4561389789`("JackOu1")
+//}

@@ -108,7 +108,7 @@ class HomeFragment : Fragment() {
     private fun showResultSuccess(result: HomeDataResponse) {
         text_home.text = "欢迎同学们的到来>>>>>>>>>>>"
 
-        // home_listview.adapter = HomeInfoListAdapter(context!!, result.data.news_list)
+         //home_listview.adapter = HomeInfoListAdapter(context!!, result.data.news_list)
         home_listview.adapter = context?.myRun { HomeInfoListAdapter(it, result.data.news_list) }
 
         // 两者图片的显示

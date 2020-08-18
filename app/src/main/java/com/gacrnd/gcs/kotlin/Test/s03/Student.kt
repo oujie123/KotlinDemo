@@ -14,5 +14,13 @@ class Student(var id: Int, var name: String, var sex: Char) {
 fun main() {
     val student = Student(1,"Jack",'m')
     val(v1,v2,v3,v4) = student
-    println()
+    println("v1:$v1,v2:$v2,v3:$v3,v4:$v4")
+
+    method()
+    method(122,222)
+}
+
+//演示默认参数
+fun method(n1:Int = 1,n2 : Int =2){
+    println("n1:$n1,n2:$n2")
 }
