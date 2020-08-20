@@ -24,11 +24,20 @@ class APIClient {
 
     fun <T> instanceRetrofit(apiInterface : Class<T>) : T {
 
-        val mOkHttpClient = OkHttpClient().newBuilder()
+        //改造前
+        /*val mOkHttpClient = OkHttpClient().newBuilder()
             .readTimeout(10,TimeUnit.SECONDS)
             .connectTimeout(10,TimeUnit.SECONDS)
             .writeTimeout(10,TimeUnit.SECONDS)
-            .build()
+            .build()*/
+
+        //改造后
+        val mOkHttpClient = OkHttpClient().newBuilder().myApply {
+            readTimeout(10,TimeUnit.SECONDS)
+            connectTimeout(10,TimeUnit.SECONDS)
+            writeTimeout(10,TimeUnit.SECONDS)
+        }.build()
+
 
         val retrofit : Retrofit = Retrofit.Builder()
             //请求方
@@ -41,4 +50,9 @@ class APIClient {
             .build()
         return retrofit.create(apiInterface)
     }
+}
+
+fun <T> T.myApply(mm: T.() -> T) : T {
+    mm(this)
+    return this
 }
